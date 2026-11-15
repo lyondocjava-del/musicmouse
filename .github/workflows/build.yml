@@ -24,23 +24,62 @@ jobs:
 
       - name: Build (unsigned)
         run: |
-          xcodebuild -project Hello.xcodeproj -scheme Hello \
+          xcodebuild -project MusicMouse.xcodeproj -scheme MusicMouse \
             -sdk iphoneos -configuration Debug \
             CODE_SIGNING_ALLOWED=NO \
             -derivedDataPath build/dd build
 
       - name: Sign + package IPA
         run: |
-          APP=build/dd/Build/Products/Debug-iphoneos/Hello.app
+          APP=build/dd/Build/Products/Debug-iphoneos/MusicMouse.app
           cp /tmp/profile.mobileprovision "$APP/embedded.mobileprovision"
           codesign --force --sign "Apple Development" \
             --entitlements entitlements.plist --timestamp=none "$APP"
           codesign -v "$APP"
           mkdir -p ipa/Payload
           cp -R "$APP" ipa/Payload/
-          cd ipa && zip -qr ../Hello.ipa Payload
+          cd ipa && zip -qr ../MusicMouse.ipa Payload
 
       - uses: actions/upload-artifact@v4
         with:
-          name: Hello.ipa
-          path: Hello.ipa
+          name: MusicMouse.ipa
+          path: MusicMouse.ipa
+
+      # --- App Store upload (dormant until paid enrollment + these secrets exist) ---
+      #   DIST_CERT_P12, DIST_CERT_P12_PASSWORD  (Apple Distribution identity)
+      #   DIST_PROVISIONING_PROFILE            (App Store distribution profile)
+      #   APP_STORE_KEY_ID, APP_STORE_ISSUER_ID, APP_STORE_API_KEY (base64 .p8)
+      # Then flip `if: false` to `if: true` and the archive/upload runs on every tag.
+      - name: Archive + upload to App Store Connect
+        if: false
+        env:
+          DIST_CERT_P12: ${{ secrets.DIST_CERT_P12 }}
+          DIST_CERT_P12_PASSWORD: ${{ secrets.DIST_CERT_P12_PASSWORD }}
+          DIST_PROVISIONING_PROFILE: ${{ secrets.DIST_PROVISIONING_PROFILE }}
+          APP_STORE_KEY_ID: ${{ secrets.APP_STORE_KEY_ID }}
+          APP_STORE_ISSUER_ID: ${{ secrets.APP_STORE_ISSUER_ID }}
+          APP_STORE_API_KEY: ${{ secrets.APP_STORE_API_KEY }}
+        run: |
+          mkdir -p ~/.appstoreconnect/private_keys
+          echo "$APP_STORE_API_KEY" | base64 --decode \
+            > ~/.appstoreconnect/private_keys/AuthKey_$APP_STORE_KEY_ID.p8
+          xcodebuild -project MusicMouse.xcodeproj -scheme MusicMouse \
+            -sdk iphoneos -configuration Release \
+            -archivePath build/MusicMouse.xcarchive archive
+          mkdir -p ExportOptions
+          cat > ExportOptions.plist <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <plist version="1.0"><dict>
+            <key>method</key><string>app-store</string>
+            <key>signingStyle</key><string>manual</string>
+            <key>teamID</key><string>F5CF2SAH5B</string>
+            <key>provisioningProfiles</key><dict>
+              <key>com.docjava.musicmouse</key><string>DIST_PROFILE_UUID</string>
+            </dict>
+          </dict></plist>
+          EOF
+          xcodebuild -exportArchive -archivePath build/MusicMouse.xcarchive \
+            -exportPath build/export -exportOptionsPlist ExportOptions.plist \
+            -allowProvisioningUpdates
+          xcrun altool --upload-app -f build/export/MusicMouse.ipa \
+            --apiKey "$APP_STORE_KEY_ID" --apiIssuer "$APP_STORE_ISSUER_ID" -t ios
