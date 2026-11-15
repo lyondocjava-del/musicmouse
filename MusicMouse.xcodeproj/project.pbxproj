@@ -1,0 +1,252 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA0000000000000000000001 /* MusicMouseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000010 /* MusicMouseApp.swift */; };
+		AA0000000000000000000002 /* VoicingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000013 /* VoicingEngine.swift */; };
+		AA0000000000000000000003 /* MidiSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000014 /* MidiSynth.swift */; };
+		AA0000000000000000000004 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000015 /* Player.swift */; };
+		AA0000000000000000000005 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000016 /* ContentView.swift */; };
+		AA0000000000000000000006 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000017 /* GridView.swift */; };
+		AA0000000000000000000007 /* KeyboardStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000018 /* KeyboardStrip.swift */; };
+		AA0000000000000000000008 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000019 /* ControlsView.swift */; };
+		AA0000000000000000000009 /* TimGM6mb.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000025 /* TimGM6mb.sf2 */; };
+		AA000000000000000000000A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000026 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA0000000000000000000010 /* MusicMouseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMouseApp.swift; sourceTree = "<group>"; };
+		AA0000000000000000000011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0000000000000000000012 /* MusicMouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000013 /* VoicingEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicingEngine.swift; sourceTree = "<group>"; };
+		AA0000000000000000000014 /* MidiSynth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiSynth.swift; sourceTree = "<group>"; };
+		AA0000000000000000000015 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		AA0000000000000000000016 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000017 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000018 /* KeyboardStrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardStrip.swift; sourceTree = "<group>"; };
+		AA0000000000000000000019 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000025 /* TimGM6mb.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TimGM6mb.sf2; sourceTree = "<group>"; };
+		AA0000000000000000000026 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA0000000000000000000020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA0000000000000000000030 = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000010 /* MusicMouseApp.swift */,
+				AA0000000000000000000013 /* VoicingEngine.swift */,
+				AA0000000000000000000014 /* MidiSynth.swift */,
+				AA0000000000000000000015 /* Player.swift */,
+				AA0000000000000000000016 /* ContentView.swift */,
+				AA0000000000000000000017 /* GridView.swift */,
+				AA0000000000000000000018 /* KeyboardStrip.swift */,
+				AA0000000000000000000019 /* ControlsView.swift */,
+				AA0000000000000000000025 /* TimGM6mb.sf2 */,
+				AA0000000000000000000026 /* Assets.xcassets */,
+				AA0000000000000000000011 /* Info.plist */,
+				AA0000000000000000000031 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000031 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000012 /* MusicMouse.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA0000000000000000000040 /* MusicMouse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA0000000000000000000050 /* Build configuration list for PBXNativeTarget "MusicMouse" */;
+			buildPhases = (
+				AA0000000000000000000021 /* Sources */,
+				AA0000000000000000000020 /* Frameworks */,
+				AA0000000000000000000022 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MusicMouse;
+			productName = MusicMouse;
+			productReference = AA0000000000000000000012 /* MusicMouse.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA0000000000000000000060 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					AA0000000000000000000040 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = AA0000000000000000000051 /* Build configuration list for PBXProject "MusicMouse" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA0000000000000000000030;
+			productRefGroup = AA0000000000000000000031 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA0000000000000000000040 /* MusicMouse */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA0000000000000000000022 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000000000000000000009 /* TimGM6mb.sf2 in Resources */,
+				AA000000000000000000000A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA0000000000000000000021 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000000000000000000001 /* MusicMouseApp.swift in Sources */,
+				AA0000000000000000000002 /* VoicingEngine.swift in Sources */,
+				AA0000000000000000000003 /* MidiSynth.swift in Sources */,
+				AA0000000000000000000004 /* Player.swift in Sources */,
+				AA0000000000000000000005 /* ContentView.swift in Sources */,
+				AA0000000000000000000006 /* GridView.swift in Sources */,
+				AA0000000000000000000007 /* KeyboardStrip.swift in Sources */,
+				AA0000000000000000000008 /* ControlsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA0000000000000000000070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA0000000000000000000071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA0000000000000000000072 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.docjava.musicmouse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA0000000000000000000073 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.docjava.musicmouse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA0000000000000000000050 /* Build configuration list for PBXNativeTarget "MusicMouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000072 /* Debug */,
+				AA0000000000000000000073 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA0000000000000000000051 /* Build configuration list for PBXProject "MusicMouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000070 /* Debug */,
+				AA0000000000000000000071 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA0000000000000000000060 /* Project object */;
+}
